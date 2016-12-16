@@ -27,8 +27,8 @@ import time
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
-from . import input_data
-from . import mnist
+from mnist_test import input_data
+from mnist_test import mnist
 
 # Basic model parameters as external flags.
 FLAGS = None
@@ -110,7 +110,7 @@ def run_training():
   """Train MNIST for a number of steps."""
   # Get the sets of images and labels for training, validation, and
   # test on MNIST.
-  data_sets = input_data.read_data_sets(FLAGS.input_data_dir, FLAGS.fake_data)
+  data_sets = input_data.read_data_sets("C:\myFile\MNIST_database", FLAGS.fake_data)
 
   # Tell TensorFlow that the model will be built into the default Graph.
   with tf.Graph().as_default():
